@@ -3,7 +3,7 @@
 ## Download k8s-env
 
 ```bash
-$ git clone https://github.com/YujiAzama/k8s-env.git
+$ git clone https://github.com/YujiAzama/k8s-env.git && cd k8s-env
 ```
 
 ## How to use
