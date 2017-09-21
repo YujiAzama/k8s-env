@@ -6,6 +6,7 @@ if [ ${EUID:-${UID}} != 0 ]; then
 fi
 
 # Install Docker CE
+echo "Install Docker CE"
 apt-get remove docker docker-engine docker.io
 
 apt-get update
@@ -23,6 +24,7 @@ apt-get update
 apt-get install -y docker-ce
 
 # Install kubectl via curl
+echo "Install kubectl"
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 
 chmod +x ./kubectl
@@ -30,6 +32,7 @@ chmod +x ./kubectl
 mv ./kubectl /usr/local/bin/kubectl
 
 # Install kubelet and kubeadm
+echo "Install kubelet and kubeadm"
 apt-get update && apt-get install -y apt-transport-https
 
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
@@ -41,3 +44,5 @@ EOF
 apt-get update
 
 apt-get install -y kubelet kubeadm
+
+echo "Install done."
