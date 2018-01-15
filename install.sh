@@ -46,7 +46,7 @@ apt-get update
 apt-get install -y kubelet kubeadm
 
 # Off fail Swap
-sed -e "5i Environment="KUBELET_EXTRA_ARGS=--fail-swap-on=false"" /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+sed -e "5i Environment=\"KUBELET_EXTRA_ARGS=--fail-swap-on=false\"" /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 systemctl daemon-reload
 systemctl restart kubelet
 
