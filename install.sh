@@ -53,4 +53,6 @@ systemctl restart kubelet
 # Reset kubeadm
 kubeadm reset
 
+echo "source <(kubectl completion bash)" >> /etc/profile
+
 echo "Install done."
